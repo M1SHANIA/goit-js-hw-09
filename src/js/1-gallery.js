@@ -7,10 +7,10 @@ const galleryContainer = document.querySelector('.gallery');
 renderGallery(images);
 
 function renderGallery(images) {
-    const markup = images
-        .map(
-            ({ preview, original, description }) =>
-                `<li class="gallery-item">
+  const markup = images
+    .map(
+      ({ preview, original, description }) =>
+        `<li class="gallery-item">
           <a class="gallery-link" href="${original}">
             <img
               class="gallery-image"
@@ -19,15 +19,15 @@ function renderGallery(images) {
             />
           </a>
         </li>`
-        )
-        .join('');
+    )
+    .join('');
 
-    galleryContainer.innerHTML = `<ul class="gallery-list">${markup}</ul>`;
+  galleryContainer.innerHTML = `<ul class="gallery">${markup}</ul>`;
 }
 
 
 const lightbox = new SimpleLightbox('.gallery-link', {
-    overlayOpacity: 0.9,
-    captionsData: "alt",
-    captionDelay: 250
+  overlayOpacity: 0.9,
+  captionsData: "alt",
+  captionDelay: 250
 });

@@ -45,19 +45,22 @@ button {
 .gallery {
   list-style-type: none;
   margin: 0;
-  padding: 100px;
+  padding: 24px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 48px 24px;
+  gap: 24px;
 }
 
 .gallery-image {
   width: 360px;
   height: 300px;
   object-fit: cover;
+}
+.gallery-item {
+  max-width: 360px;
 }
 /* FORM */
 .feedback-form {

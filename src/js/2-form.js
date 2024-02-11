@@ -1,6 +1,10 @@
 const form = document.querySelector(".feedback-form");
 const STORAGE_KEY = "feedback-form-state";
 
+document.addEventListener('DOMContentLoaded', () => {
+    restoreData();
+});
+
 form.addEventListener('input', onFormInput);
 
 function onFormInput(event) {
@@ -24,11 +28,15 @@ function onFormSubmit(event) {
     const email = form.elements.email.value.trim();
     const message = form.elements.message.value.trim();
 
-    if (!email || !message) {
-        alert('All form fields must be filled in');
+    if (!email) {
+        alert('Email field must be filled in');
+        return;
+    } else if (!message) {
+        alert("Message field can't be empty!");
         return;
     }
 
+    console.log('Form submitted successfully. Email sent to:', email);
     localStorage.removeItem(STORAGE_KEY);
     form.reset();
 }
@@ -54,5 +62,3 @@ function restoreData() {
     form.elements.email.value = data.email || '';
     form.elements.message.value = data.message || '';
 }
-
-restoreData();
