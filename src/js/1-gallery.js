@@ -22,12 +22,10 @@ function renderGallery(images) {
     )
     .join('');
 
-  galleryContainer.innerHTML = `<ul class="gallery">${markup}</ul>`;
+  galleryContainer.innerHTML = markup;
 }
 
-
-const lightbox = new SimpleLightbox('.gallery-link', {
-  overlayOpacity: 0.9,
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: "alt",
   captionDelay: 250
 });
